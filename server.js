@@ -2,9 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const config = require('config');
-//Routes
-const routeItems = require('./routes/api/items');
-//End Routes
 
 //Init Express
 const app = express();
@@ -26,7 +23,8 @@ mongoose
   .catch(err => console.log(err));
 
 // Use Routes
-app.use('/api/items', routeItems);
+const items = require('./routes/api/items');
+app.use('/api/items', items);
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 
@@ -40,6 +38,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 6000;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth');
 
-// Item Model
+// Item Model - Schema (Mongoose)
 const Item = require('../../models/Item');
 
 // @route   GET api/items
