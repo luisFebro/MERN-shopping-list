@@ -4,14 +4,14 @@
   "description": "Shopping list built with the MERN stack",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
+    "client-install": "cd client && npm install",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "Brad Traversy",
+  "author": "Brad Traversy and adapted by Luis Febro",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
