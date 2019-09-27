@@ -29,10 +29,10 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, '../client/build')))
+app.use(express.static(path.join(__dirname, 'client/build')))
 // Anything that doesn't match the above, send back index.html
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '../client/build/index.html'))
+    res.sendFile(path.join(__dirname + 'client/build/index.html'))
 })
 //Brad Solution: NODE_ENV error in Window: node_env value of 'production' did not match any deployment config file names
 // if (process.env.NODE_ENV === 'production') {
