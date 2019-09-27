@@ -37,6 +37,16 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
+/* Why set NPM_CONFIG_PRODUCTION=false in package.json?
+    the reason for that is because
+    to it's not going to run
+    the build script if it's not in
+    production so we have to set that to
+    false just for this script once this is
+    done it'll be in production but we have
+    to set this flag right here for this to
+    work correctly so we want to set th
+*/
 
 const port = process.env.PORT || 6000;
 
