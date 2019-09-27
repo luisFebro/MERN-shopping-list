@@ -8,6 +8,14 @@ import {
 const initialState = {
   items: [],
   loading: false
+    /*Explanation: the reason for this is
+    because when we fetch data it could take
+    us a couple milliseconds to get and this
+    will be set to false but once we start
+    to get the data once we make that
+    request we want this set to true and
+    then when we get the data. After that is conmpleted, we want
+    it set back to false - Brad*/
 };
 
 export default function(state = initialState, action) {

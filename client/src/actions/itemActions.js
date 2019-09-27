@@ -4,6 +4,7 @@ import { tokenConfig } from './authActions';
 import { returnErrors } from './errorActions';
 
 export const getItems = () => dispatch => {
+  // set loading to true to init fetch data
   dispatch(setItemsLoading());
   axios
     .get('/api/items')
