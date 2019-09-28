@@ -6,7 +6,7 @@ const { mongoUrl } = require('./config/keys');
 //Init Express
 const app = express();
 
-// Bodyparser Middleware
+// Bodyparser Middleware - package body-parser is no longer necessary. Express now has a body-parser.
 app.use(express.json());
 
 // DB Config
@@ -23,8 +23,7 @@ mongoose
   .catch(err => console.log(err));
 
 // Use Routes
-const items = require('./routes/api/items');
-app.use('/api/items', items);
+app.use('/api/items', require('./routes/api/items'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 
