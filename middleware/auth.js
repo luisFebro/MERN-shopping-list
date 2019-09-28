@@ -1,10 +1,18 @@
+/*this middleware is created so that
+we can have private routes that are only
+accessed if we send along the token from routes/api/auth*/
 const { jwtSecret } = require('../config/keys');
 const jwt = require('jsonwebtoken');
 
+/*The purpose of this function here is to get
+the token that's sent from either react
+or postman angular whatever front-end
+you're using where it's gonna send along
+a token*/
 function auth(req, res, next) {
   const token = req.header('x-auth-token');
 
-  // Check for token
+  // Check for token if it exists
   if (!token)
     return res.status(401).json({ msg: 'No token, authorizaton denied' });
 

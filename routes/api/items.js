@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth');
+/*auth is used as a second parameter in post and delete apis to authorize access to private routes*/
 
 // Item Model - Schema (Mongoose)
 const Item = require('../../models/Item');
