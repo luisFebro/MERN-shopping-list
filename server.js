@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const config = require('config');
+const { mongoUrl } = require('./config/keys');
 
 //Init Express
 const app = express();
@@ -10,8 +10,8 @@ const app = express();
 app.use(express.json());
 
 // DB Config
-const db = config.get('mongoURI');
-// can also be: const db = require('./config/optionalKeys').mongoURI
+const db = mongoUrl
+// can also be: const db = config.get('mongoURI'); from a json file
 
 // Connect to Mongo
 mongoose
@@ -19,7 +19,7 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true
   }) // Adding new mongo url parser
-  .then(() => console.log('MongoDB Connected...'))
+  .then(() => console.log(`MongoDB Connected...`))
   .catch(err => console.log(err));
 
 // Use Routes
