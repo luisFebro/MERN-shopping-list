@@ -7,6 +7,9 @@ const app = express();
 
 // Bodyparser Middleware - package body-parser is no longer necessary. Express now has a body-parser.
 app.use(express.json());
+//from email PurchaseRequest (this is the former way, use express for body parser)
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 // DB Config
 const db = mongoUrl
