@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const { mongoUrl } = require('./config/keys');
-
 //Init Express
 const app = express();
 
